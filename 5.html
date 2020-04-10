@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+background-image: url('bg.jpg');
+background-size: cover;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+
+<center><h1 style="background-color:red;"><b><i>  HELPING     HANDS </i></b></h1></center>
+<center><h2 style="background-color:yellow;"><b><i>  GALLERY OF COMPLAINTS</i></b></h1></center>
+<h4>........click on the image to enlarge it...and slide down</h4>
+<!-- The four columns -->
+<div class="row">
+  <div class="column">
+    <img src="char1.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+     <div class="overlay">food help in slums</div>
+  </div>
+  <div class="column">
+    <img src="char2..jpg" alt="Snow" style="width:100%" onclick="myFunction(this);">
+     <div class="overlay">Our team  member is helping a girl</div>
+  </div>
+  <div class="column">
+    <img src="char3.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+    <div class="overlay">hospitalisation</div>
+  </div>
+  <div class="column">
+    <img src="char4.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+    <div class="overlay">a young boy was taken to hospital by our members</div>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <img src="char5.jpg" " style="width:100%" onclick="myFunction(this);">
+ <div class="overlay">a lady member was helping children</div>
+  </div>
+  <div class="column">
+    <img src="char6.jpg"" style="width:100%" onclick="myFunction(this);">
+ <div class="overlay">step towarads ending food starvation</div>
+  </div>
+  <div class="column">
+    <img src="char7.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+ <div class="overlay">Women empowerment</div>
+  </div>
+  <div class="column">
+    <img src="char8.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+ <div class="overlay">Women is equal and powerful</div>
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
